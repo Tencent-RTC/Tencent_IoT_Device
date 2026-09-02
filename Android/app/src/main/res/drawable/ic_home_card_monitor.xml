@@ -1,0 +1,57 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="140dp"
+    android:viewportWidth="140"
+    android:viewportHeight="140">
+
+    <!-- 阴影 -->
+    <path
+        android:fillColor="#EEC994"
+        android:fillAlpha="0.55"
+        android:pathData="M70,120m-46,0a46,7 0,1 1,92 0a46,7 0,1 1,-92 0" />
+
+    <!-- 底座 -->
+    <path
+        android:fillColor="#FBE1C5"
+        android:pathData="M70,96 L116,112 L70,128 L24,112 Z" />
+    <path
+        android:fillColor="#E9C79E"
+        android:pathData="M70,128 L116,112 L116,116 L70,132 L24,116 L24,112 Z" />
+
+    <!-- 摄像头身体 -->
+    <path
+        android:fillColor="#F49A3A"
+        android:pathData="M36,50 Q36,36 52,36 L82,36 Q98,36 98,50 L98,86 Q98,100 82,100 L52,100 Q36,100 36,86 Z" />
+    <!-- 高光 -->
+    <path
+        android:fillColor="#F7B366"
+        android:pathData="M42,50 Q42,42 54,42 L64,42 Q64,80 42,86 Z" />
+    <!-- 镜头外圈 -->
+    <path
+        android:fillColor="#3E2A1D"
+        android:pathData="M70,68m-20,0a20,20 0,1 1,40 0a20,20 0,1 1,-40 0" />
+    <!-- 镜头玻璃 -->
+    <path
+        android:fillColor="#6C4326"
+        android:pathData="M70,68m-14,0a14,14 0,1 1,28 0a14,14 0,1 1,-28 0" />
+    <!-- 镜头高光 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.55"
+        android:pathData="M62,62m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <!-- 顶部小按钮/耳朵 -->
+    <path
+        android:fillColor="#F49A3A"
+        android:pathData="M48,28 L58,36 L48,44 Z" />
+    <path
+        android:fillColor="#F49A3A"
+        android:pathData="M92,28 L82,36 L92,44 Z" />
+
+    <!-- 电话听筒（右侧） -->
+    <path
+        android:fillColor="#F08B2E"
+        android:pathData="M108,60 C118,58 122,66 118,74 L112,84 C118,90 116,100 106,102 L100,90 C96,86 96,80 100,78 L106,68 C104,66 104,62 108,60 Z" />
+    <path
+        android:fillColor="#F7B366"
+        android:pathData="M110,64 C116,64 118,68 116,72 L112,80 C116,84 114,90 108,92 L104,86 C102,82 102,80 104,78 L108,72 C106,70 106,66 110,64 Z" />
+</vector>

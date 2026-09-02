@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login_gradient"
+    tools:context=".AITalkActivity">
+
+    <!-- 顶部标题区 -->
+    <LinearLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/aitalk_page_padding_h"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp"
+        android:foreground="@drawable/fg_aitalk_header_shadow"
+        android:foregroundGravity="fill_horizontal|bottom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/aitalk_title_main"
+                    android:textColor="@color/aitalk_send_bg"
+                    android:textSize="@dimen/aitalk_title_main_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/aitalk_title_sub"
+                    android:textColor="@color/aitalk_title"
+                    android:textSize="@dimen/aitalk_title_sub_size"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/aitalk_subtitle"
+                android:textColor="@color/aitalk_subtitle"
+                android:textSize="@dimen/aitalk_subtitle_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 消息列表区（可滚动、白色卡片容器） -->
+    <ScrollView
+        android:id="@+id/sv_messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/aitalk_page_padding_h"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:paddingHorizontal="12dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/ll_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/ll_input">
+
+        <LinearLayout
+            android:id="@+id/ll_messages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+
+            <!-- 日期分隔（首次进入即显示，后续消息由代码动态添加到其下方） -->
+            <TextView
+                android:id="@+id/tv_date_divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/aitalk_date_today"
+                android:textColor="@color/aitalk_date_text"
+                android:textSize="@dimen/aitalk_date_text_size" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 底部输入区（左：模式切换按钮；右：语音条 / 文字输入框 互斥展示） -->
+    <LinearLayout
+        android:id="@+id/ll_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/aitalk_page_padding_h"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 语音/文字 模式切换按钮（白色小胶囊） -->
+        <ImageView
+            android:id="@+id/iv_mode_switch"
+            android:layout_width="@dimen/aitalk_input_height"
+            android:layout_height="@dimen/aitalk_input_height"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_aitalk_keyboard_pill"
+            android:contentDescription="@string/aitalk_switch_to_text"
+            android:padding="12dp"
+            android:src="@drawable/ic_aitalk_keyboard" />
+
+        <!-- 输入模式切换容器：语音条 / 文本输入框（同一位置互斥展示） -->
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- 语音条：常驻录音，仅动画由 startSpeak 成功回调驱动 -->
+            <com.tencent.liteav.iot.demo.widget.VoiceWaveView
+                android:id="@+id/voice_wave"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/aitalk_input_height"
+                android:background="@drawable/bg_aitalk_voice_pill"
+                android:contentDescription="@string/aitalk_listening" />
+
+            <!-- 文字模式：白色输入框 + 发送（切到该模式时，语音不停止） -->
+            <LinearLayout
+                android:id="@+id/ll_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/aitalk_input_height"
+                android:background="@drawable/bg_aitalk_input"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="10dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/et_input"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="@string/aitalk_input_hint"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/aitalk_input_text"
+                    android:textColorHint="@color/aitalk_input_hint"
+                    android:textSize="@dimen/aitalk_input_text_size"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    tools:ignore="Autofill" />
+
+                <ImageView
+                    android:id="@+id/iv_send"
+                    android:layout_width="@dimen/aitalk_send_size"
+                    android:layout_height="@dimen/aitalk_send_size"
+                    android:background="@drawable/bg_aitalk_send"
+                    android:contentDescription="@null"
+                    android:padding="9dp"
+                    android:src="@drawable/ic_aitalk_send" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- @选择技能 胶囊，浮于输入框左下角上方 -->
+    <TextView
+        android:id="@+id/tv_skill_chip"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/aitalk_chip_height"
+        android:layout_marginStart="@dimen/aitalk_page_padding_h"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/bg_aitalk_skill_chip"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:text="@string/aitalk_chip_skill"
+        android:textColor="@color/aitalk_skill_chip_text"
+        android:textSize="@dimen/aitalk_chip_text_size"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/ll_input"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

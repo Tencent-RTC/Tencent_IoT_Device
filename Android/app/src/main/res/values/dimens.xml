@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_page_padding">24dp</dimen>
+    <dimen name="login_card_radius">20dp</dimen>
+    <dimen name="login_input_radius">10dp</dimen>
+    <dimen name="login_button_radius">28dp</dimen>
+    <dimen name="login_input_height">52dp</dimen>
+    <dimen name="login_button_height">52dp</dimen>
+    <dimen name="login_icon_size">22dp</dimen>
+    <dimen name="login_label_text">15sp</dimen>
+    <dimen name="login_input_text">15sp</dimen>
+    <dimen name="login_title_text">26sp</dimen>
+    <dimen name="login_subtitle_text">14sp</dimen>
+    <dimen name="login_button_text">17sp</dimen>
+    <dimen name="login_help_text">14sp</dimen>
+
+    <!-- Home -->
+    <dimen name="home_page_padding">20dp</dimen>
+    <dimen name="home_welcome_title_text">26sp</dimen>
+    <dimen name="home_welcome_subtitle_text">14sp</dimen>
+    <dimen name="home_card_radius">22dp</dimen>
+    <dimen name="home_card_title_text">22sp</dimen>
+    <dimen name="home_card_desc_text">12sp</dimen>
+    <dimen name="home_card_arrow_size">32dp</dimen>
+    <dimen name="home_card_icon_size">110dp</dimen>
+    <dimen name="home_avatar_size">44dp</dimen>
+    <dimen name="home_tab_bar_height">64dp</dimen>
+    <dimen name="home_tab_icon_size">24dp</dimen>
+    <dimen name="home_tab_text">12sp</dimen>
+
+    <!-- ==================== AITalk ==================== -->
+    <dimen name="aitalk_page_padding_h">20dp</dimen>
+    <dimen name="aitalk_title_main_size">22sp</dimen>
+    <dimen name="aitalk_title_sub_size">14sp</dimen>
+    <dimen name="aitalk_subtitle_size">13sp</dimen>
+    <dimen name="aitalk_date_text_size">12sp</dimen>
+
+    <dimen name="aitalk_bubble_radius">14dp</dimen>
+    <dimen name="aitalk_bubble_padding_h">14dp</dimen>
+    <dimen name="aitalk_bubble_padding_v">10dp</dimen>
+    <dimen name="aitalk_bubble_text_size">15sp</dimen>
+    <dimen name="aitalk_avatar_size">36dp</dimen>
+    <dimen name="aitalk_avatar_icon_size">20dp</dimen>
+    <dimen name="aitalk_action_icon_size">18dp</dimen>
+    <dimen name="aitalk_input_radius">24dp</dimen>
+    <dimen name="aitalk_input_height">48dp</dimen>
+    <dimen name="aitalk_input_text_size">15sp</dimen>
+
+    <dimen name="aitalk_mic_size">40dp</dimen>
+    <dimen name="aitalk_send_size">40dp</dimen>
+    <dimen name="aitalk_chip_height">30dp</dimen>
+    <dimen name="aitalk_chip_text_size">12sp</dimen>
+
+    <!-- ==================== ThingModel ==================== -->
+    <dimen name="thing_page_padding">20dp</dimen>
+    <dimen name="thing_title_size">22sp</dimen>
+    <dimen name="thing_subtitle_size">13sp</dimen>
+
+    <dimen name="thing_device_card_padding">16dp</dimen>
+    <dimen name="thing_cube_size">44dp</dimen>
+    <dimen name="thing_device_name_size">16sp</dimen>
+    <dimen name="thing_device_meta_size">12sp</dimen>
+    <dimen name="thing_online_chip_height">20dp</dimen>
+    <dimen name="thing_online_chip_text">11sp</dimen>
+
+    <dimen name="thing_tab_height">44dp</dimen>
+    <dimen name="thing_tab_text">14sp</dimen>
+
+    <dimen name="thing_input_height">44dp</dimen>
+    <dimen name="thing_input_text">14sp</dimen>
+
+    <dimen name="thing_add_btn_radius">24dp</dimen>
+    <dimen name="thing_add_btn_height">44dp</dimen>
+    <dimen name="thing_add_btn_text">15sp</dimen>
+    <dimen name="thing_search_radius">10dp</dimen>
+    <dimen name="thing_search_height">40dp</dimen>
+    <dimen name="thing_search_text">14sp</dimen>
+    <dimen name="thing_card_radius">14dp</dimen>
+    <dimen name="thing_btn_radius">10dp</dimen>
+    <dimen name="thing_input_radius">10dp</dimen>
+
+    <dimen name="thing_prop_padding">14dp</dimen>
+    <dimen name="thing_prop_avatar_size">40dp</dimen>
+    <dimen name="thing_prop_name_size">15sp</dimen>
+    <dimen name="thing_prop_desc_size">13sp</dimen>
+    <dimen name="thing_prop_meta_size">12sp</dimen>
+
+    <dimen name="thing_type_chip_height">20dp</dimen>
+    <dimen name="thing_type_chip_text">11sp</dimen>
+
+    <dimen name="thing_btn_height">36dp</dimen>
+    <dimen name="thing_btn_text">14sp</dimen>
+</resources>

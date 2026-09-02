@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="@color/contacts_avatar_text">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,12 m -4,0 a 4,4 0 1,0 8,0 a 4,4 0 1,0 -8,0" />
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M4,20 C4,16.13 7.58,13 12,13 C16.42,13 20,16.13 20,20 L20,21 L4,21 Z" />
+</vector>

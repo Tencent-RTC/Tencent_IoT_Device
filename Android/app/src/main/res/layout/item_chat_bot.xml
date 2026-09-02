@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="6dp"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="@dimen/aitalk_avatar_size"
+        android:layout_height="@dimen/aitalk_avatar_size"
+        android:layout_gravity="top"
+        android:background="@drawable/bg_aitalk_avatar_bot">
+
+        <ImageView
+            android:layout_width="@dimen/aitalk_avatar_icon_size"
+            android:layout_height="@dimen/aitalk_avatar_icon_size"
+            android:layout_gravity="center"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_aitalk_bot" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_aitalk_bubble_bot"
+            android:lineSpacingExtra="4dp"
+            android:paddingHorizontal="@dimen/aitalk_bubble_padding_h"
+            android:paddingVertical="12dp"
+            android:textColor="@color/aitalk_bubble_bot_text"
+            android:textSize="@dimen/aitalk_bubble_text_size"
+            android:minWidth="40dp"
+            tools:ignore="RtlSymmetry"
+            tools:text="示例AI回复" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/bg_thing_property_card"
+    android:orientation="vertical"
+    android:padding="@dimen/thing_prop_padding">
+
+    <!-- 首行：头像 + 名字 + 类型 chip + 右箭头 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="@dimen/thing_prop_avatar_size"
+            android:layout_height="@dimen/thing_prop_avatar_size"
+            android:background="@drawable/bg_thing_avatar_string">
+
+            <TextView
+                android:id="@+id/tv_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="T"
+                android:textColor="@color/thing_avatar_string_text"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="welcome_word"
+            android:textColor="@color/thing_title"
+            android:textSize="@dimen/thing_prop_name_size"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/thing_type_chip_height"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_thing_type_chip"
+            android:gravity="center"
+            android:paddingHorizontal="8dp"
+            android:text="@string/thing_type_string"
+            android:textColor="@color/thing_type_chip_text"
+            android:textSize="@dimen/thing_type_chip_text" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_thing_arrow_right" />
+    </LinearLayout>
+
+    <!-- 中文名 -->
+    <TextView
+        android:id="@+id/tv_display_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="欢迎语"
+        android:textColor="@color/thing_body_text"
+        android:textSize="@dimen/thing_prop_desc_size"
+        tools:ignore="HardcodedText" />
+
+    <!-- meta：标识符 / 读写类型 / 取值范围 -->
+    <TextView
+        android:id="@+id/tv_meta_identifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="标识符: welcome_word"
+        android:textColor="@color/thing_subtitle"
+        android:textSize="@dimen/thing_prop_meta_size"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_meta_rw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="读写类型: rw"
+        android:textColor="@color/thing_subtitle"
+        android:textSize="@dimen/thing_prop_meta_size"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_meta_range"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="取值范围: 0 ~ 2048 (string)"
+        android:textColor="@color/thing_subtitle"
+        android:textSize="@dimen/thing_prop_meta_size"
+        tools:ignore="HardcodedText" />
+
+    <!-- 当前值标签 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/thing_label_current_value"
+        android:textColor="@color/thing_title"
+        android:textSize="@dimen/thing_prop_desc_size" />
+
+    <!-- 当前值输入框 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <EditText
+            android:id="@+id/et_value"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/thing_input_height"
+            android:background="@drawable/bg_thing_input"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:paddingHorizontal="12dp"
+            android:singleLine="true"
+            android:text="欢迎使用 Android IoT 设备"
+            android:textColor="@color/thing_input_text"
+            android:textColorHint="@color/thing_input_hint"
+            android:textSize="@dimen/thing_input_text"
+            tools:ignore="Autofill,HardcodedText" />
+    </FrameLayout>
+
+    <!-- 字符统计 -->
+    <TextView
+        android:id="@+id/tv_length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="4dp"
+        android:text="12 / 2048"
+        android:textColor="@color/thing_subtitle"
+        android:textSize="@dimen/thing_prop_meta_size"
+        tools:ignore="HardcodedText" />
+
+    <!-- 操作按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/btn_get"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/thing_btn_height"
+            android:layout_weight="1"
+            android:background="@drawable/bg_thing_btn_secondary"
+            android:gravity="center"
+            android:text="@string/thing_btn_get"
+            android:textColor="@color/thing_secondary_btn_text"
+            android:textSize="@dimen/thing_btn_text" />
+
+        <TextView
+            android:id="@+id/btn_report"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/thing_btn_height"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_thing_btn_primary"
+            android:gravity="center"
+            android:text="@string/thing_btn_report"
+            android:textColor="@color/white"
+            android:textSize="@dimen/thing_btn_text"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

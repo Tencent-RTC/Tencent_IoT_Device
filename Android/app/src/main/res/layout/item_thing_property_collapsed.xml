@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="14dp"
+    android:paddingTop="14dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="@dimen/thing_prop_avatar_size"
+            android:layout_height="@dimen/thing_prop_avatar_size"
+            android:background="@drawable/bg_thing_avatar_int">
+
+            <TextView
+                android:id="@+id/tv_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="N"
+                android:textColor="@color/thing_avatar_int_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/thing_title"
+                    android:textSize="@dimen/thing_prop_name_size"
+                    android:textStyle="bold"
+                    tools:text="battery_level" />
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/thing_type_chip_height"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_thing_type_chip"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:textColor="@color/thing_type_chip_text"
+                    android:textSize="@dimen/thing_type_chip_text"
+                    tools:text="int" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_display_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textColor="@color/thing_body_text"
+                android:textSize="@dimen/thing_prop_desc_size"
+                tools:text="电量等级" />
+
+            <TextView
+                android:id="@+id/tv_meta_identifier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/thing_subtitle"
+                android:textSize="@dimen/thing_prop_meta_size"
+                tools:text="标识符: battery_level" />
+
+            <TextView
+                android:id="@+id/tv_meta_rw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/thing_subtitle"
+                android:textSize="@dimen/thing_prop_meta_size"
+                tools:text="读写类型: r" />
+
+            <TextView
+                android:id="@+id/tv_meta_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/thing_subtitle"
+                android:textSize="@dimen/thing_prop_meta_size"
+                tools:text="取值范围: 0 ~ 100 (int)" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_current_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/thing_body_text"
+            android:textSize="@dimen/thing_prop_meta_size"
+            tools:text="当前值: 85" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/thing_divider" />
+
+</LinearLayout>

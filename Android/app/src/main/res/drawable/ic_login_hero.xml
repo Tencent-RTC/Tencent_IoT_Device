@@ -1,0 +1,137 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="180dp"
+    android:viewportWidth="240"
+    android:viewportHeight="180">
+
+    <!-- 底座椭圆阴影 -->
+    <path
+        android:fillColor="#D8DEF0"
+        android:pathData="M120,155m-70,0a70,10 0,1 1,140 0a70,10 0,1 1,-140 0" />
+    <!-- 底座圆盘 -->
+    <path
+        android:fillColor="#E4EAFB"
+        android:pathData="M120,140m-56,0a56,10 0,1 1,112 0a56,10 0,1 1,-112 0" />
+    <path
+        android:fillColor="#C8D3F3"
+        android:pathData="M120,138m-56,0a56,6 0,1 1,112 0a56,6 0,1 1,-112 0" />
+
+    <!-- 左侧云朵 -->
+    <group android:translateX="30" android:translateY="30">
+        <path
+            android:fillColor="#DCE3F5"
+            android:pathData="M18,20c-4,0 -7,-3 -7,-7 0,-4 3,-7 7,-7 1,0 2,0 3,1 1,-3 4,-5 7,-5 4,0 8,3 8,8 0,0 0,1 0,1 3,0 5,2 5,5 0,3 -2,5 -5,5H18z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#B9C4E8"
+            android:strokeWidth="1"
+            android:pathData="M20,18c-3,0 -6,-2 -6,-6 0,-3 3,-6 6,-6 1,0 2,0 3,1 1,-2 4,-4 6,-4 4,0 7,3 7,7 0,0 0,1 0,1 3,0 5,2 5,4 0,3 -2,5 -5,5H20z" />
+    </group>
+
+    <!-- WiFi 信号弧线 -->
+    <group android:translateX="130" android:translateY="15">
+        <path
+            android:strokeColor="#7B98E8"
+            android:strokeWidth="3"
+            android:fillColor="#00000000"
+            android:pathData="M0,28 Q20,0 40,28" />
+        <path
+            android:strokeColor="#7B98E8"
+            android:strokeWidth="3"
+            android:fillColor="#00000000"
+            android:pathData="M6,32 Q20,10 34,32" />
+        <path
+            android:strokeColor="#7B98E8"
+            android:strokeWidth="3"
+            android:fillColor="#00000000"
+            android:pathData="M13,36 Q20,22 27,36" />
+        <path
+            android:fillColor="#4B7BF5"
+            android:pathData="M20,40m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+    </group>
+
+    <!-- 摄像头（中间） -->
+    <group android:translateX="70" android:translateY="60">
+        <!-- 支架 -->
+        <path
+            android:fillColor="#B7C4EA"
+            android:pathData="M32,70h6v10h-6z" />
+        <path
+            android:fillColor="#9CADDE"
+            android:pathData="M22,80h26v6h-26z" />
+        <!-- 摄像头主体 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#B9C4E8"
+            android:strokeWidth="1"
+            android:pathData="M8,30h54c3,0 6,3 6,6v30c0,3 -3,6 -6,6H8c-3,0 -6,-3 -6,-6V36c0,-3 3,-6 6,-6z" />
+        <!-- 镜头外圈 -->
+        <path
+            android:fillColor="#4B7BF5"
+            android:pathData="M35,51m-19,0a19,19 0,1 1,38 0a19,19 0,1 1,-38 0" />
+        <!-- 镜头内圈 -->
+        <path
+            android:fillColor="#1D2129"
+            android:pathData="M35,51m-13,0a13,13 0,1 1,26 0a13,13 0,1 1,-26 0" />
+        <!-- 镜头高光 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.5"
+            android:pathData="M29,45m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+        <!-- 顶部指示灯 -->
+        <path
+            android:fillColor="#4B7BF5"
+            android:pathData="M60,36m-2,0a2,2 0,1 1,4 0a2,2 0,1 1,-4 0" />
+    </group>
+
+    <!-- 右侧智能插座 -->
+    <group android:translateX="155" android:translateY="80">
+        <!-- 插座主体 -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#B9C4E8"
+            android:strokeWidth="1"
+            android:pathData="M6,4h32c3,0 6,3 6,6v40c0,3 -3,6 -6,6H6c-3,0 -6,-3 -6,-6V10c0,-3 3,-6 6,-6z" />
+        <!-- 上部圆形 -->
+        <path
+            android:fillColor="#E9EEFB"
+            android:pathData="M22,20m-10,0a10,10 0,1 1,20 0a10,10 0,1 1,-20 0" />
+        <!-- 插孔（美式两竖一横） -->
+        <path
+            android:fillColor="#1D2129"
+            android:pathData="M18,16h2v6h-2zM24,16h2v6h-2z" />
+        <path
+            android:fillColor="#1D2129"
+            android:pathData="M20,26h4v2h-4z" />
+        <!-- 下部按钮 -->
+        <path
+            android:fillColor="#4B7BF5"
+            android:pathData="M22,42m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    </group>
+
+    <!-- 右侧小方块（网关） -->
+    <group android:translateX="200" android:translateY="70">
+        <path
+            android:fillColor="#FFFFFF"
+            android:strokeColor="#B9C4E8"
+            android:strokeWidth="1"
+            android:pathData="M2,2h22c2,0 4,2 4,4v28c0,2 -2,4 -4,4H2c-2,0 -4,-2 -4,-4V6c0,-2 2,-4 4,-4z" />
+        <path
+            android:fillColor="#4B7BF5"
+            android:pathData="M4,8h20v2h-20zM4,14h20v2h-20zM4,20h14v2h-14z" />
+    </group>
+
+    <!-- 装饰点点 -->
+    <path
+        android:fillColor="#B9C4E8"
+        android:pathData="M10,90m-1.5,0a1.5,1.5 0,1 1,3 0a1.5,1.5 0,1 1,-3 0" />
+    <path
+        android:fillColor="#B9C4E8"
+        android:pathData="M225,60m-1.5,0a1.5,1.5 0,1 1,3 0a1.5,1.5 0,1 1,-3 0" />
+    <path
+        android:fillColor="#B9C4E8"
+        android:pathData="M20,120m-1,0a1,1 0,1 1,2 0a1,1 0,1 1,-2 0" />
+    <path
+        android:fillColor="#B9C4E8"
+        android:pathData="M220,120m-1,0a1,1 0,1 1,2 0a1,1 0,1 1,-2 0" />
+</vector>

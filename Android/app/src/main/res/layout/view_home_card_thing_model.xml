@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_home_card_blue"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="18dp">
+
+    <TextView
+        android:id="@+id/tv_card_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_card_thing_model_title"
+        android:textColor="@color/home_title"
+        android:textSize="@dimen/home_card_title_text"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_card_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/home_card_thing_model_desc"
+        android:textColor="@color/home_card_desc"
+        android:textSize="@dimen/home_card_desc_text"
+        app:layout_constraintTop_toBottomOf="@id/tv_card_title"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/home_card_icon_size"
+        android:layout_height="@dimen/home_card_icon_size"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_home_card_thing_model"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/home_card_arrow_size"
+        android:layout_height="@dimen/home_card_arrow_size"
+        android:background="@drawable/bg_home_arrow_blue"
+        android:contentDescription="@null"
+        android:padding="6dp"
+        android:src="@drawable/ic_home_arrow_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

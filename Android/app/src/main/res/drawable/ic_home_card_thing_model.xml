@@ -1,0 +1,54 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="140dp"
+    android:viewportWidth="140"
+    android:viewportHeight="140">
+
+    <!-- 阴影 -->
+    <path
+        android:fillColor="#C6D0EE"
+        android:fillAlpha="0.55"
+        android:pathData="M70,120m-46,0a46,7 0,1 1,92 0a46,7 0,1 1,-92 0" />
+
+    <!-- 底座（等距菱形） -->
+    <path
+        android:fillColor="#DCE4F7"
+        android:pathData="M70,90 L118,108 L70,126 L22,108 Z" />
+    <path
+        android:fillColor="#C4D0F1"
+        android:pathData="M70,126 L118,108 L118,112 L70,130 L22,112 L22,108 Z" />
+
+    <!-- 立方体（等距） -->
+    <!-- 顶面 -->
+    <path
+        android:fillColor="#5F8CFF"
+        android:pathData="M70,42 L106,60 L70,78 L34,60 Z" />
+    <!-- 左面 -->
+    <path
+        android:fillColor="#3A6BE0"
+        android:pathData="M34,60 L70,78 L70,110 L34,92 Z" />
+    <!-- 右面 -->
+    <path
+        android:fillColor="#4B7BF5"
+        android:pathData="M106,60 L70,78 L70,110 L106,92 Z" />
+
+    <!-- 节点连线 -->
+    <path
+        android:strokeColor="#4B7BF5"
+        android:strokeWidth="1.6"
+        android:fillColor="#00000000"
+        android:pathData="M70,42 L70,20 M34,60 L14,54 M106,60 L126,54 M70,110 L70,132 M34,92 L14,100 M106,92 L126,100" />
+
+    <!-- 节点 -->
+    <path android:fillColor="#4B7BF5" android:pathData="M70,20m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="#4B7BF5" android:pathData="M14,54m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="#4B7BF5" android:pathData="M126,54m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="#4B7BF5" android:pathData="M14,100m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+    <path android:fillColor="#4B7BF5" android:pathData="M126,100m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+
+    <!-- 顶面高光 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.35"
+        android:pathData="M70,44 L104,60 L70,76 L36,60 Z" />
+</vector>

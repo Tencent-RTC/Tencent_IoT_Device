@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/home_page_padding"
+        android:paddingTop="32dp"
+        android:paddingBottom="24dp">
+
+        <!-- ===== 欢迎区 ===== -->
+        <TextView
+            android:id="@+id/tv_home_welcome_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="@string/home_welcome_title"
+            android:textColor="@color/home_title"
+            android:textSize="@dimen/home_welcome_title_text"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- 当前设备在线状态徽标 -->
+        <TextView
+            android:id="@+id/tv_device_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_device_state_offline"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="@string/device_state_offline"
+            android:textColor="@color/device_state_offline_text"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/tv_home_welcome_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_home_welcome_title"
+            app:layout_constraintStart_toEndOf="@id/tv_home_welcome_title"
+            app:layout_constraintEnd_toStartOf="@id/iv_home_avatar"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <!-- 右上角头像按钮：跳转设备详情 -->
+        <ImageView
+            android:id="@+id/iv_home_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_home_avatar"
+            android:clickable="true"
+            android:contentDescription="@null"
+            android:focusable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_home_user"
+            app:layout_constraintTop_toTopOf="@id/tv_home_welcome_title"
+            app:layout_constraintBottom_toBottomOf="@id/tv_home_welcome_subtitle"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_welcome_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/home_welcome_subtitle"
+            android:textColor="@color/home_subtitle"
+            android:textSize="@dimen/home_welcome_subtitle_text"
+            app:layout_constraintTop_toBottomOf="@id/tv_home_welcome_title"
+            app:layout_constraintStart_toStartOf="@id/tv_home_welcome_title"
+            app:layout_constraintEnd_toStartOf="@id/iv_home_avatar"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <!-- 设备画面正在被查看提示条（后台推流时可见） -->
+        <LinearLayout
+            android:id="@+id/ll_home_streaming_banner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_home_streaming_banner"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tv_home_welcome_subtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/ic_home_streaming_dot" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/home_streaming_banner"
+                android:textColor="#F5222D"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ===== 卡片布局：视频通话（第一行独占）+ AITalk / 物模型（第二行 2 列） ===== -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!-- 视频通话入口已下线：仅作为布局占位（id 保留），隐藏不展示 -->
+        <include
+            android:id="@+id/card_call"
+            layout="@layout/view_home_card_call"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/ll_home_streaming_banner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- 视频通话 TweCall（第一行独占，用于拨打微信小程序端） -->
+        <include
+            android:id="@+id/card_twecall"
+            layout="@layout/view_home_card_twecall"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/ll_home_streaming_banner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_goneMarginTop="24dp" />
+
+        <!-- AITalk（第二行左侧） -->
+        <include
+            android:id="@+id/card_aitalk"
+            layout="@layout/view_home_card_aitalk"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="6dp"
+            app:layout_constraintTop_toBottomOf="@id/card_twecall"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_center" />
+
+        <!-- 物模型（第二行右侧，与 AITalk 对齐） -->
+        <include
+            android:id="@+id/card_thing_model"
+            layout="@layout/view_home_card_thing_model"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="6dp"
+            app:layout_constraintTop_toTopOf="@id/card_aitalk"
+            app:layout_constraintStart_toEndOf="@id/guideline_center"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

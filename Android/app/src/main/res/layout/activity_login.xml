@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login_gradient"
+    android:fillViewport="true"
+    android:scrollbars="none"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/login_page_padding"
+        android:paddingTop="16dp"
+        android:paddingBottom="12dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/login_title"
+            android:textColor="@color/login_title"
+            android:textSize="@dimen/login_title_text"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:text="@string/login_subtitle"
+            android:textColor="@color/login_subtitle"
+            android:textSize="@dimen/login_subtitle_text" />
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="6dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/ic_iot_login" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_login_card"
+            android:elevation="2dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <LinearLayout style="@style/LoginLabelRow">
+
+                <ImageView
+                    style="@style/LoginLabelIcon"
+                    android:src="@drawable/ic_login_product" />
+
+                <TextView
+                    style="@style/LoginLabelText"
+                    android:text="@string/login_label_product_id" />
+
+                <TextView
+                    style="@style/LoginRequiredMark"
+                    android:text="@string/login_required_mark" />
+            </LinearLayout>
+
+            <FrameLayout style="@style/LoginInputContainer">
+
+                <EditText
+                    android:id="@+id/et_product_id"
+                    style="@style/LoginEditText"
+                    android:hint="@string/login_hint_product_id"
+                    android:inputType="text"
+                    android:text="" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/LoginLabelRow"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    style="@style/LoginLabelIcon"
+                    android:src="@drawable/ic_login_device" />
+
+                <TextView
+                    style="@style/LoginLabelText"
+                    android:text="@string/login_label_device_id" />
+
+                <TextView
+                    style="@style/LoginRequiredMark"
+                    android:text="@string/login_required_mark" />
+            </LinearLayout>
+
+            <FrameLayout style="@style/LoginInputContainer">
+
+                <EditText
+                    android:id="@+id/et_device_id"
+                    style="@style/LoginEditText"
+                    android:hint="@string/login_hint_device_id"
+                    android:inputType="text"
+                    android:text="" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/LoginLabelRow"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    style="@style/LoginLabelIcon"
+                    android:src="@drawable/ic_login_lock" />
+
+                <TextView
+                    style="@style/LoginLabelText"
+                    android:text="@string/login_label_device_secret" />
+
+                <TextView
+                    style="@style/LoginRequiredMark"
+                    android:text="@string/login_required_mark" />
+            </LinearLayout>
+
+            <FrameLayout style="@style/LoginInputContainer">
+
+                <EditText
+                    android:id="@+id/et_device_secret"
+                    style="@style/LoginEditText"
+                    android:hint="@string/login_hint_device_secret"
+                    android:inputType="textPassword"
+                    android:paddingEnd="48dp"
+                    android:text=""
+                    tools:ignore="RtlSymmetry" />
+
+                <ImageView
+                    android:id="@+id/iv_secret_toggle"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:contentDescription="@null"
+                    android:focusable="true"
+                    android:src="@drawable/ic_login_eye_toggle" />
+            </FrameLayout>
+
+            <LinearLayout
+                style="@style/LoginLabelRow"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    style="@style/LoginLabelIcon"
+                    android:src="@drawable/ic_login_region" />
+
+                <TextView
+                    style="@style/LoginLabelText"
+                    android:text="@string/login_label_region" />
+
+                <TextView
+                    style="@style/LoginRequiredMark"
+                    android:text="@string/login_required_mark" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/fl_region"
+                style="@style/LoginInputContainer"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/tv_region"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16dp"
+                    android:paddingEnd="44dp"
+                    android:text="@string/login_hint_region"
+                    android:textColor="@color/login_input_hint"
+                    android:textSize="@dimen/login_input_text"
+                    tools:ignore="RtlSymmetry" />
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginEnd="14dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_login_arrow_down" />
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_button_height"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_login_button"
+                android:letterSpacing="0.1"
+                android:stateListAnimator="@null"
+                android:text="@string/login_button"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/login_button_text"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

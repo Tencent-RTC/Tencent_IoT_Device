@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="140dp"
+    android:viewportWidth="140"
+    android:viewportHeight="140">
+
+    <!-- 底部阴影 -->
+    <path
+        android:fillColor="#A9DDBF"
+        android:fillAlpha="0.55"
+        android:pathData="M70,122 m-42,0 a42,7 0,1 1,84 0 a42,7 0,1 1,-84 0" />
+
+    <!-- 微信绿气泡主体（简洁大气泡 + 左下小尾巴） -->
+    <path
+        android:fillColor="#1AAD19"
+        android:pathData="M70,20
+                 C 42,20 20,38 20,62
+                 C 20,76 27,88 39,96
+                 L 33,114
+                 L 54,102
+                 C 59,103 65,104 70,104
+                 C 98,104 120,86 120,62
+                 C 120,38 98,20 70,20 Z" />
+
+    <!-- 气泡内层高光（叠一层浅绿，形成层次） -->
+    <path
+        android:fillColor="#3ECB58"
+        android:pathData="M70,28
+                 C 45,28 27,43 27,62
+                 C 27,74 34,84 45,90
+                 L 40,104
+                 L 57,95
+                 C 61,96 65,96 70,96
+                 C 95,96 113,81 113,62
+                 C 113,43 95,28 70,28 Z" />
+
+    <!-- 顶部反光（营造立体感） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.35"
+        android:pathData="M46,38 Q60,30 82,32 Q66,34 54,46 Z" />
+
+    <!-- 摄像机机身（白色圆角矩形，适度放大） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M45,51 L77,51 A5.5,5.5 0 0 1 82.5,56.5 L82.5,75.5 A5.5,5.5 0 0 1 77,81 L45,81 A5.5,5.5 0 0 1 39.5,75.5 L39.5,56.5 A5.5,5.5 0 0 1 45,51 Z" />
+
+    <!-- 摄像机镜头出光三角（右侧，等比放大） -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M82.5,61 L97,54 A2.8,2.8 0 0 1 100,56.5 L100,75.5 A2.8,2.8 0 0 1 97,78 L82.5,71 Z" />
+
+    <!-- 镜头小圆点（用微信绿点缀，视觉焦点） -->
+    <path
+        android:fillColor="#1AAD19"
+        android:pathData="M51,66 m -3.4,0 a 3.4,3.4 0 1,0 6.8,0 a 3.4,3.4 0 1,0 -6.8,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52.2,64.8 m -1.05,0 a 1.05,1.05 0 1,0 2.1,0 a 1.05,1.05 0 1,0 -2.1,0" />
+</vector>

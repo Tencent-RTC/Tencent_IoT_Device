@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Login page colors -->
+    <color name="login_bg_start">#EEF1FB</color>
+    <color name="login_bg_end">#F6F8FE</color>
+    <color name="login_card_bg">#FFFFFFFF</color>
+    <color name="login_primary">#4B7BF5</color>
+    <color name="login_primary_pressed">#3D68DA</color>
+    <color name="login_title">#1D2129</color>
+    <color name="login_subtitle">#86909C</color>
+    <color name="login_label">#1D2129</color>
+    <color name="login_required">#F5222D</color>
+    <color name="login_input_bg">#F7F8FA</color>
+    <color name="login_input_stroke">#E5E6EB</color>
+    <color name="login_input_hint">#C9CDD4</color>
+    <color name="login_input_text">#1D2129</color>
+    <color name="login_link">#4B7BF5</color>
+
+    <!-- Home page colors -->
+    <color name="home_title">#1D2129</color>
+    <color name="home_subtitle">#86909C</color>
+    <color name="home_card_desc">#4E5969</color>
+    <color name="home_tab_bar_bg">#FFFFFFFF</color>
+    <color name="home_tab_selected">#4B7BF5</color>
+    <color name="home_tab_unselected">#86909C</color>
+    <color name="home_avatar_bg">#FFFFFFFF</color>
+
+    <!-- 设备在线状态徽章 -->
+    <color name="device_state_online_bg">#E4F5EA</color>
+    <color name="device_state_online_text">#33B26B</color>
+    <color name="device_state_offline_bg">#F2F3F5</color>
+    <color name="device_state_offline_text">#86909C</color>
+    <color name="device_state_reconnecting_bg">#FBEEDD</color>
+    <color name="device_state_reconnecting_text">#F08B2E</color>
+
+    <!-- Card 1: 物模型 (blue) -->
+    <color name="card_blue_bg_start">#E9EEFC</color>
+    <color name="card_blue_bg_end">#DDE6FB</color>
+    <color name="card_blue_stroke">#D6DFF8</color>
+    <color name="card_blue_arrow">#4B7BF5</color>
+
+    <!-- Card 2: AITalk (purple) -->
+    <color name="card_purple_bg_start">#EDE7FB</color>
+    <color name="card_purple_bg_end">#E1D8F8</color>
+    <color name="card_purple_stroke">#D6C9F6</color>
+    <color name="card_purple_arrow">#8A5CF5</color>
+
+    <!-- Card 3: 云存 (green) -->
+    <color name="card_green_bg_start">#E4F5EA</color>
+    <color name="card_green_bg_end">#D4EFDD</color>
+    <color name="card_green_stroke">#C8E7D2</color>
+    <color name="card_green_arrow">#33B26B</color>
+
+    <!-- Card 4: 监控 (orange) -->
+    <color name="card_orange_bg_start">#FBEEDD</color>
+    <color name="card_orange_bg_end">#F9E1C5</color>
+    <color name="card_orange_stroke">#F3D2AC</color>
+    <color name="card_orange_arrow">#F08B2E</color>
+
+    <!-- ==================== AITalk 页面 ==================== -->
+    <color name="aitalk_page_bg">#F6F8FE</color>
+    <color name="aitalk_title">#1D2129</color>
+    <color name="aitalk_subtitle">#4E5969</color>
+    <color name="aitalk_date_text">#86909C</color>
+
+    <color name="aitalk_bot_avatar_bg">#EDE7FB</color>
+    <color name="aitalk_user_avatar_bg">#4B7BF5</color>
+    <color name="aitalk_user_avatar_tint">#FFFFFF</color>
+
+    <color name="aitalk_bubble_bot_bg">#FFFFFFFF</color>
+    <color name="aitalk_bubble_bot_stroke">#E5E6EB</color>
+    <color name="aitalk_bubble_bot_text">#1D2129</color>
+    <color name="aitalk_bubble_user_bg">#4B7BF5</color>
+    <color name="aitalk_bubble_user_text">#FFFFFFFF</color>
+
+    <color name="aitalk_history_stroke">#D6DFF8</color>
+
+    <color name="aitalk_input_bg">#FFFFFFFF</color>
+    <color name="aitalk_input_stroke">#E5E6EB</color>
+    <color name="aitalk_input_text">#1D2129</color>
+    <color name="aitalk_input_hint">#C9CDD4</color>
+
+    <color name="aitalk_send_bg">#4B7BF5</color>
+    <color name="aitalk_send_bg_pressed">#3D68DA</color>
+
+    <color name="aitalk_skill_chip_bg">#EEF1FB</color>
+    <color name="aitalk_skill_chip_text">#4B7BF5</color>
+
+    <color name="aitalk_mic_tint">#4B7BF5</color>
+    <color name="aitalk_action_tint">#86909C</color>
+    <color name="aitalk_more">#86909C</color>
+
+    <!-- ==================== ThingModel 页面 ==================== -->
+    <color name="thing_page_bg_start">#EEF1FB</color>
+    <color name="thing_page_bg_end">#F6F8FE</color>
+
+    <color name="thing_title">#1D2129</color>
+    <color name="thing_subtitle">#86909C</color>
+    <color name="thing_body_text">#4E5969</color>
+    <color name="thing_divider">#EEF0F3</color>
+
+    <color name="thing_primary">#4B7BF5</color>
+    <color name="thing_primary_pressed">#3D68DA</color>
+    <color name="thing_primary_light">#EEF1FB</color>
+
+    <color name="thing_tab_selected">#4B7BF5</color>
+    <color name="thing_tab_unselected">#86909C</color>
+
+    <color name="thing_card_bg">#FFFFFFFF</color>
+    <color name="thing_card_stroke">#EEF0F3</color>
+
+    <color name="thing_input_bg">#F7F8FA</color>
+    <color name="thing_input_stroke">#E5E6EB</color>
+    <color name="thing_input_text">#1D2129</color>
+    <color name="thing_input_hint">#C9CDD4</color>
+
+    <color name="thing_search_bg">#F2F3F5</color>
+    <color name="thing_search_hint">#C9CDD4</color>
+
+    <color name="thing_more_tint">#86909C</color>
+
+    <color name="thing_online_bg">#E4F5EA</color>
+    <color name="thing_online_text">#33B26B</color>
+
+    <color name="thing_add_btn_bg">#4B7BF5</color>
+    <color name="thing_add_btn_bg_pressed">#3D68DA</color>
+
+    <color name="thing_secondary_btn_bg">#FFFFFFFF</color>
+    <color name="thing_secondary_btn_stroke">#D6DFF8</color>
+    <color name="thing_secondary_btn_text">#4B7BF5</color>
+
+    <!-- 属性头像色板 -->
+    <color name="thing_avatar_bool_bg">#E4F5EA</color>
+    <color name="thing_avatar_enum_bg">#EDE7FB</color>
+    <color name="thing_avatar_int_bg">#E9EEFC</color>
+    <color name="thing_avatar_string_bg">#FBEEDD</color>
+
+    <color name="thing_avatar_int_text">#4B7BF5</color>
+    <color name="thing_avatar_enum_text">#8A5CF5</color>
+    <color name="thing_avatar_string_text">#F08B2E</color>
+    <color name="thing_avatar_bool_text">#33B26B</color>
+
+    <!-- 属性类型 chip -->
+    <color name="thing_type_chip_bg">#EEF1FB</color>
+    <color name="thing_type_chip_text">#4B7BF5</color>
+
+    <!-- ==================== TweCall 联系人页 & 通话方式弹窗 ==================== -->
+    <color name="contacts_page_bg">#F6F8FE</color>
+    <color name="contacts_title">#1D2129</color>
+    <color name="contacts_subtitle">#86909C</color>
+    <color name="contacts_card_bg">#FFFFFFFF</color>
+    <color name="contacts_card_stroke">#EEF0F3</color>
+    <color name="contacts_item_name">#1D2129</color>
+    <color name="contacts_item_id">#86909C</color>
+    <color name="contacts_avatar_bg">#E4F5EA</color>
+    <color name="contacts_avatar_text">#33B26B</color>
+    <color name="contacts_divider">#F2F3F5</color>
+    <color name="contacts_empty_text">#86909C</color>
+    <color name="contacts_load_more_bg">#EEF1FB</color>
+    <color name="contacts_load_more_text">#4B7BF5</color>
+
+    <color name="call_media_video_bg">#E4F5EA</color>
+    <color name="call_media_video_tint">#33B26B</color>
+    <color name="call_media_audio_bg">#EEF1FB</color>
+    <color name="call_media_audio_tint">#4B7BF5</color>
+    <color name="call_media_title">#1D2129</color>
+    <color name="call_media_desc">#86909C</color>
+    <color name="call_media_cancel_text">#4E5969</color>
+</resources>

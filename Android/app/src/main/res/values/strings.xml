@@ -1,0 +1,183 @@
+<resources>
+    <string name="app_name">IoT设备Demo</string>
+
+    <!-- Login page -->
+    <string name="login_title">IoT 设备登录</string>
+    <string name="login_subtitle">连接设备，开启智能体验</string>
+    <string name="login_label_product_id">ProductId</string>
+    <string name="login_label_device_id">DeviceId</string>
+    <string name="login_label_device_secret">DeviceSecret</string>
+    <string name="login_label_region">Region</string>
+    <string name="login_hint_product_id">请输入 ProductId</string>
+    <string name="login_hint_device_id">请输入 DeviceId</string>
+    <string name="login_hint_device_secret">请输入 DeviceSecret</string>
+    <string name="login_hint_region">请选择 Region</string>
+    <string name="login_required_mark">*</string>
+    <string name="login_button">登录</string>
+    <string name="login_help">如何获取接入信息？</string>
+
+    <!-- Home page -->
+    <string name="home_welcome_title">欢迎回来！</string>
+    <string name="home_welcome_subtitle">智能设备平台</string>
+
+    <string name="home_card_thing_model_title">物模型</string>
+    <string name="home_card_thing_model_desc">设备物模型管理与配置，\n定义设备能力与属性</string>
+
+    <string name="home_card_aitalk_title">AITalk</string>
+    <string name="home_card_aitalk_desc">AI语音能力管理与配置，\n打造智能语音交互体验</string>
+
+    <string name="home_card_call_title">视频通话</string>
+    <string name="home_card_call_desc">与app、小程序端进行\n实时音视频通话</string>
+
+    <string name="home_card_twecall_title">视频通话 TweCall</string>
+    <string name="home_card_twecall_desc">一键拨打微信小程序端，\n发起实时音视频通话</string>
+
+    <string name="home_card_twecall_dialog_title">拨打 TweCall</string>
+    <string name="home_card_twecall_dialog_hint">请输入对端 UserId（微信小程序端）</string>
+    <string name="home_card_twecall_dialog_ok">拨打</string>
+    <string name="home_card_twecall_dialog_cancel">取消</string>
+    <string name="home_card_twecall_empty_tip">对端 UserId 不能为空</string>
+
+    <!-- TweCall 联系人页 -->
+    <string name="contacts_title">选择联系人</string>
+    <string name="contacts_subtitle">从微信小程序端联系人中发起通话</string>
+    <string name="contacts_loading">正在加载联系人…</string>
+    <string name="contacts_empty">暂无联系人</string>
+    <string name="contacts_load_error">加载失败：%1$s</string>
+    <string name="contacts_load_more">加载更多</string>
+    <string name="contacts_no_more">— 已加载全部 —</string>
+
+    <!-- 通话方式底部弹窗 -->
+    <string name="call_media_sheet_title">发起通话</string>
+    <string name="call_media_sheet_subtitle">请选择通话方式</string>
+    <string name="call_media_video">视频通话</string>
+    <string name="call_media_video_desc">与对方实时视频面对面</string>
+    <string name="call_media_audio">语音通话</string>
+    <string name="call_media_audio_desc">仅使用麦克风进行语音通话</string>
+    <string name="call_media_sheet_cancel">取消</string>
+
+    <string name="home_card_monitor_title">监控</string>
+    <string name="home_card_monitor_desc">设备监控与画面查看，\n实时掌控设备状态</string>
+
+    <string name="home_tab_home">首页</string>
+    <string name="home_tab_mine">我的</string>
+
+    <string name="home_mine_placeholder">个人中心</string>
+
+    <!-- home 页 - 后台推流状态提示 -->
+    <string name="home_streaming_banner">设备画面正在被查看</string>
+
+    <!-- 设备在线状态 -->
+    <string name="device_state_online">在线</string>
+    <string name="device_state_offline">离线</string>
+    <string name="device_state_reconnecting">重连中</string>
+
+    <!-- 设备详情页 -->
+    <string name="detail_title">设备详情</string>
+    <string name="detail_section_info">设备信息</string>
+    <string name="detail_section_status">在线状态</string>
+    <string name="detail_field_product_id">ProductId</string>
+    <string name="detail_field_device_id">DeviceId</string>
+    <string name="detail_field_region">Region</string>
+    <string name="detail_value_empty">--</string>
+    <string name="detail_logout">退出登录</string>
+    <string name="detail_logout_confirm_title">退出登录</string>
+    <string name="detail_logout_confirm_message">退出后将断开当前设备连接，确认继续吗？</string>
+    <string name="detail_logout_confirm_ok">退出</string>
+    <string name="detail_logout_confirm_cancel">取消</string>
+    <string name="detail_logout_success">已退出登录</string>
+    <string name="detail_logout_failed">退出失败：%1$s</string>
+
+    <!-- 设备详情 - 监控设置 -->
+    <string name="detail_section_monitor">监控设置</string>
+    <string name="detail_monitor_auto_launch_title">有人查看监控时跳转本地预览</string>
+    <string name="detail_monitor_auto_launch_desc">关闭后，云端拉流时将保持在首页后台推流，不再打开预览页面</string>
+
+    <!-- 监控/拨打接听 选择弹窗 -->
+    <string name="monitor_sheet_title">监控与通话</string>
+    <string name="monitor_sheet_subtitle">请选择要执行的操作</string>
+    <string name="monitor_sheet_item_monitor">实时监控</string>
+    <string name="monitor_sheet_item_monitor_desc">查看设备摄像头实时画面</string>
+    <string name="monitor_sheet_item_call">拨打接听</string>
+    <string name="monitor_sheet_item_call_desc">与设备发起语音/视频通话</string>
+
+    <!-- 实时监控页 -->
+    <string name="monitor_title">实时监控</string>
+    <string name="monitor_status_connecting">连接中…</string>
+    <string name="monitor_status_online">已连接</string>
+    <string name="monitor_status_offline">已断开</string>
+    <string name="monitor_preview_hint">正在连接设备画面…</string>
+    <string name="monitor_live_label">LIVE</string>
+    <string name="monitor_quality_hd">高清</string>
+    <string name="monitor_action_talk">对讲</string>
+    <string name="monitor_action_talk_on">关闭对讲</string>
+    <string name="monitor_action_snapshot">截图</string>
+    <string name="monitor_action_record">录像</string>
+    <string name="monitor_action_stop">结束</string>
+
+    <!-- 拨打接听页 -->
+    <string name="call_title">拨打接听</string>
+    <string name="call_state_calling">正在呼叫…</string>
+    <string name="call_state_incoming">来电</string>
+    <string name="call_state_talking">通话中</string>
+    <string name="call_state_ended">通话已结束</string>
+    <string name="call_peer_default">IoT 设备</string>
+    <string name="call_peer_default_id">DeviceId：--</string>
+    <string name="call_duration_zero">00:00</string>
+    <string name="call_action_accept">接听</string>
+    <string name="call_action_reject">拒接</string>
+    <string name="call_action_hangup">挂断</string>
+    <string name="call_action_mute">静音</string>
+    <string name="call_action_speaker">扬声器</string>
+    <string name="call_action_mic_on">麦克风已开</string>
+    <string name="call_action_mic_off">麦克风已关</string>
+    <string name="call_action_speaker_on">扬声器已开</string>
+    <string name="call_action_speaker_off">扬声器已关</string>
+    <string name="call_action_camera_on">摄像头已开</string>
+    <string name="call_action_camera_off">摄像头已关</string>
+    <string name="call_action_switch_camera">切换摄像头</string>
+
+    <!-- AITalk 页 -->
+    <string name="aitalk_title">AITalk</string>
+    <string name="aitalk_title_main">AITalk</string>
+    <string name="aitalk_title_sub">智能语音助手</string>
+    <string name="aitalk_subtitle">与你的智能设备对话</string>
+    <string name="aitalk_date_today">今天</string>
+    <string name="aitalk_input_hint">请输入内容…</string>
+    <string name="aitalk_listening">正在聆听…</string>
+    <string name="aitalk_switch_to_text">切换到文字输入</string>
+    <string name="aitalk_switch_to_voice">切换到语音输入</string>
+    <string name="aitalk_chip_skill">技能</string>
+    <string name="aitalk_action_like">赞</string>
+    <string name="aitalk_action_dislike">踩</string>
+    <string name="aitalk_action_copy">复制</string>
+    <string name="aitalk_action_refresh">重试</string>
+
+    <!-- ThingModel 页 -->
+    <string name="thing_title">物模型</string>
+    <string name="thing_subtitle">设备物模型管理</string>
+    <string name="thing_device_default_name">IoT 设备</string>
+    <string name="thing_state_online">在线</string>
+    <string name="thing_state_offline">离线</string>
+    <string name="thing_state_reconnecting">重连中</string>
+    <string name="thing_device_product_prefix">ProductId：</string>
+    <string name="thing_device_device_prefix">DeviceId：</string>
+    <string name="thing_tab_property">属性</string>
+    <string name="thing_tab_event">事件</string>
+    <string name="thing_search_hint">搜索属性 / 事件</string>
+    <string name="thing_filter">筛选</string>
+    <string name="thing_btn_add">新增</string>
+    <string name="thing_type_string">string</string>
+    <string name="thing_type_int">int</string>
+    <string name="thing_type_bool">bool</string>
+    <string name="thing_type_float">float</string>
+    <string name="thing_type_enum">enum</string>
+    <string name="thing_label_current_value">当前值</string>
+    <string name="thing_label_current_value_prefix">当前值：</string>
+    <string name="thing_label_identifier">标识符：</string>
+    <string name="thing_label_rw">读写：</string>
+    <string name="thing_label_range">取值范围：</string>
+    <string name="thing_btn_get">获取</string>
+    <string name="thing_btn_report">上报</string>
+    <string name="thing_event_report">上报事件</string>
+</resources>

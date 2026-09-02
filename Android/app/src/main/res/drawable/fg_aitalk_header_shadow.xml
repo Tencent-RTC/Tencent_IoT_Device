@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  用作 ll_header 的 android:foreground，模拟标题栏底部的一条柔和投影。
+  - 上层透明区域覆盖整个 header 内容（不影响外观）
+  - 下方 4dp 高的从深到透明的线性渐变，贴在 header 底边，形成"分割阴影"效果
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 主体透明层，占满 header 区域 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+
+    <!-- 底部阴影带：从上到下由浅灰渐变到透明 -->
+    <item
+        android:top="0dp"
+        android:gravity="bottom"
+        android:height="2dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="270"
+                android:startColor="#14000000"
+                android:endColor="#00000000"
+                android:type="linear" />
+        </shape>
+    </item>
+
+</layer-list>

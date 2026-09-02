@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+
+    <!-- 视频摄像机外壳 -->
+    <path
+        android:fillColor="#22C55E"
+        android:pathData="M14,22 L40,22 A6,6 0 0 1 46,28 L46,44 A6,6 0 0 1 40,50 L14,50 A6,6 0 0 1 8,44 L8,28 A6,6 0 0 1 14,22 Z" />
+
+    <!-- 镜头三角出光 -->
+    <path
+        android:fillColor="#16A34A"
+        android:pathData="M46,32 L60,24 A2,2 0 0 1 63,26 L63,46 A2,2 0 0 1 60,48 L46,40 Z" />
+
+    <!-- 录制指示灯 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M17,29 m -2.5,0 a 2.5,2.5 0 1,0 5,0 a 2.5,2.5 0 1,0 -5,0" />
+</vector>

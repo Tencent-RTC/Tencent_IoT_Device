@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="140dp"
+    android:viewportWidth="140"
+    android:viewportHeight="140">
+
+    <!-- 阴影 -->
+    <path
+        android:fillColor="#CDBEEE"
+        android:fillAlpha="0.55"
+        android:pathData="M70,120m-42,0a42,7 0,1 1,84 0a42,7 0,1 1,-84 0" />
+
+    <!-- 底座 -->
+    <path
+        android:fillColor="#E1D7F5"
+        android:pathData="M70,96 L112,112 L70,128 L28,112 Z" />
+    <path
+        android:fillColor="#C9B9EE"
+        android:pathData="M70,128 L112,112 L112,116 L70,132 L28,116 L28,112 Z" />
+
+    <!-- 语音气泡 -->
+    <path
+        android:fillColor="#B197F3"
+        android:pathData="M70,20 C46,20 30,34 30,54 C30,68 40,80 56,84 L52,102 L74,84 C96,82 110,68 110,54 C110,34 94,20 70,20 Z" />
+    <!-- 高光 -->
+    <path
+        android:fillColor="#D8C9FA"
+        android:pathData="M70,26 C51,26 38,38 38,54 C38,66 46,74 60,78 L58,90 L72,78 C90,76 102,66 102,54 C102,38 89,26 70,26 Z" />
+    <!-- 声波柱 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M56,44h6v22h-6zM66,38h6v34h-6zM76,44h6v22h-6zM86,50h6v10h-6zM46,50h6v10h-6z" />
+    <!-- 顶部反光 -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.5"
+        android:pathData="M50,32 Q60,26 74,28 Q64,30 56,38 Z" />
+</vector>

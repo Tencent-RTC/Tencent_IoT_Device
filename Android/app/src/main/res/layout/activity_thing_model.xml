@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_thing_page_gradient"
+    tools:context=".DataModelActivity">
+
+    <!-- 顶部导航栏 -->
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="@dimen/thing_page_padding"
+        android:layout_marginTop="14dp"
+        android:contentDescription="@null"
+        android:padding="2dp"
+        android:src="@drawable/ic_thing_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_title_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/thing_title"
+            android:textColor="@color/thing_title"
+            android:textSize="@dimen/thing_title_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/thing_subtitle"
+            android:textColor="@color/thing_subtitle"
+            android:textSize="@dimen/thing_subtitle_size" />
+    </LinearLayout>
+
+
+    <!-- 设备卡片 -->
+    <LinearLayout
+        android:id="@+id/ll_device_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/thing_page_padding"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_thing_device_card"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/thing_device_card_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_title_group">
+
+        <ImageView
+            android:layout_width="@dimen/thing_cube_size"
+            android:layout_height="@dimen/thing_cube_size"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_thing_cube" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_device_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thing_device_default_name"
+                    android:textColor="@color/thing_title"
+                    android:textSize="@dimen/thing_device_name_size"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_device_state"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/thing_online_chip_height"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_thing_online_chip"
+                    android:gravity="center"
+                    android:paddingHorizontal="8dp"
+                    android:text="@string/thing_state_online"
+                    android:textColor="@color/thing_online_text"
+                    android:textSize="@dimen/thing_online_chip_text" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_device_product"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/thing_device_product_prefix"
+                android:textColor="@color/thing_body_text"
+                android:textSize="@dimen/thing_device_meta_size" />
+
+            <TextView
+                android:id="@+id/tv_device_device"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/thing_device_device_prefix"
+                android:textColor="@color/thing_body_text"
+                android:textSize="@dimen/thing_device_meta_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 内容卡片（Tab + 搜索 + 列表） -->
+    <LinearLayout
+        android:id="@+id/ll_content_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/thing_page_padding"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="14dp"
+        android:background="@drawable/bg_thing_property_card"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/ll_device_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_add">
+
+        <!-- Tab -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/thing_tab_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/tab_property"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tab_property"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/thing_tab_property"
+                    android:textColor="@color/thing_tab_selected"
+                    android:textSize="@dimen/thing_tab_text"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/indicator_property"
+                    android:layout_width="24dp"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@color/thing_tab_selected" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tab_event"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_tab_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/thing_tab_event"
+                    android:textColor="@color/thing_tab_unselected"
+                    android:textSize="@dimen/thing_tab_text" />
+
+                <View
+                    android:id="@+id/indicator_event"
+                    android:layout_width="24dp"
+                    android:layout_height="3dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@android:color/transparent" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/thing_divider" />
+
+        <!-- 搜索栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="6dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/thing_search_height"
+                android:layout_weight="1"
+                android:background="@drawable/bg_thing_search"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_thing_search" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/thing_search_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/thing_input_text"
+                    android:textColorHint="@color/thing_search_hint"
+                    android:textSize="@dimen/thing_search_text"
+                    tools:ignore="Autofill" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_thing_filter" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/thing_filter"
+                    android:textColor="@color/thing_primary"
+                    android:textSize="@dimen/thing_search_text" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 列表 -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:paddingHorizontal="10dp"
+            android:paddingBottom="10dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/ll_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- 底部添加按钮 -->
+    <TextView
+        android:id="@+id/btn_add"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/thing_add_btn_height"
+        android:layout_marginHorizontal="@dimen/thing_page_padding"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_thing_btn_add"
+        android:drawableStart="@drawable/ic_thing_plus"
+        android:drawablePadding="6dp"
+        android:gravity="center"
+        android:paddingHorizontal="24dp"
+        android:text="@string/thing_btn_add"
+        android:textColor="@color/white"
+        android:textSize="@dimen/thing_add_btn_text"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/bg_thing_property_card"
+    android:orientation="vertical"
+    android:padding="@dimen/thing_prop_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="@dimen/thing_prop_avatar_size"
+            android:layout_height="@dimen/thing_prop_avatar_size"
+            android:background="@drawable/bg_thing_avatar_enum">
+
+            <TextView
+                android:id="@+id/tv_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="E"
+                android:textColor="@color/thing_avatar_enum_text"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/thing_title"
+                android:textSize="@dimen/thing_prop_name_size"
+                android:textStyle="bold"
+                tools:text="low_battery_alert" />
+
+            <TextView
+                android:id="@+id/tv_display_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/thing_body_text"
+                android:textSize="@dimen/thing_prop_desc_size"
+                tools:text="低电量告警" />
+
+            <TextView
+                android:id="@+id/tv_meta_identifier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/thing_subtitle"
+                android:textSize="@dimen/thing_prop_meta_size"
+                tools:text="标识符: low_battery_alert" />
+
+            <TextView
+                android:id="@+id/tv_meta_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/thing_subtitle"
+                android:textSize="@dimen/thing_prop_meta_size"
+                tools:text="事件类型: alert" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_report_event"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thing_btn_height"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_thing_btn_primary"
+        android:gravity="center"
+        android:text="@string/thing_event_report"
+        android:textColor="@color/white"
+        android:textSize="@dimen/thing_btn_text"
+        android:textStyle="bold" />
+</LinearLayout>

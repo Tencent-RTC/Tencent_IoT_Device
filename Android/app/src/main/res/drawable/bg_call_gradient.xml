@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- 呼叫来电页默认背景色：与设计稿深棕黑保持一致 -->
+    <solid android:color="#1E1917" />
+</shape>

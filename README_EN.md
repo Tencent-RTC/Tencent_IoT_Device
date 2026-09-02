@@ -1,4 +1,4 @@
-# Tencent Cloud IoT APP SDK
+# Tencent Cloud IoT Device SDK
 
 English | [简体中文](./README.md)
 

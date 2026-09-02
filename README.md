@@ -1,4 +1,4 @@
-# 腾讯云物联网 APP SDK
+# Tencent Cloud IoT 设备端 SDK
 
 [English](./README_EN.md) | 简体中文
 

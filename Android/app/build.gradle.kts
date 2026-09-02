@@ -48,7 +48,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":txiotdevicesdk"))
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.aar", "*.jar"))))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

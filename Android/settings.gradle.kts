@@ -12,14 +12,15 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
+        flatDir {
+            dirs("app/libs")
+        }
     }
 }
 
 rootProject.name = "demo"
 include(":app")
-include(":txiotdevicesdk")
-project(":txiotdevicesdk").projectDir = file("../sdk")

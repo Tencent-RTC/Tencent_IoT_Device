@@ -13,23 +13,20 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.tencent.liteav.iot.TXIoTCallSession
 import com.tencent.liteav.iot.TXIoTValueCallback
+import com.tencent.liteav.iot.demo.util.LocalContactStore
+import com.tencent.liteav.iot.demo.widget.SwipeRevealLayout
 
 class ContactsActivity : CallAwareActivity() {
-
-    companion object {
-        private const val PAGE_SIZE = 20
-        private const val VIEW_TYPE_CONTACT = 0
-        private const val VIEW_TYPE_FOOTER = 1
-    }
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var loadingContainer: View
     private lateinit var emptyView: View
 
     private val callSession: TXIoTCallSession by lazy { TXIoTCallSession.getInstance() }
-    private val contacts = mutableListOf<TXIoTCallSession.Contact>()
+    private val contacts = mutableListOf<ContactEntry>()
     private val adapter = ContactAdapter()
 
+    private var openedSwipe: SwipeRevealLayout? = null
     private var nextCursor: String = ""
     private var hasMore: Boolean = true
     private var isLoading: Boolean = false
@@ -45,6 +42,9 @@ class ContactsActivity : CallAwareActivity() {
         emptyView = findViewById(R.id.tv_contacts_empty)
 
         findViewById<View>(R.id.iv_contacts_back).setOnClickListener { finish() }
+        findViewById<View>(R.id.iv_contacts_add).setOnClickListener {
+            AddContactDialog(this) { local -> onLocalContactAdded(local) }.show()
+        }
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
@@ -65,6 +65,16 @@ class ContactsActivity : CallAwareActivity() {
 
     private fun loadFirstPage() {
         contacts.clear()
+        // 先加载本地手动添加的联系人
+        LocalContactStore.getAll(this).forEach {
+            contacts.add(
+                ContactEntry(
+                    LocalContactStore.toSessionContact(it),
+                    it.type,
+                    isLocal = true
+                )
+            )
+        }
         showFooter = false
         footerLoading = false
         adapter.notifyDataSetChanged()
@@ -74,6 +84,35 @@ class ContactsActivity : CallAwareActivity() {
         emptyView.visibility = View.GONE
         recyclerView.visibility = View.GONE
         fetchPage(isFirst = true)
+    }
+
+    private fun onLocalContactAdded(local: LocalContactStore.LocalContact) {
+        contacts.add(
+            0,
+            ContactEntry(
+                LocalContactStore.toSessionContact(local),
+                local.type,
+                isLocal = true
+            )
+        )
+        loadingContainer.visibility = View.GONE
+        emptyView.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun onDeleteLocalContact(position: Int, entry: ContactEntry) {
+        if (!entry.isLocal) return
+        val userId = entry.contact.userId.orEmpty()
+        LocalContactStore.remove(this, userId)
+        contacts.removeAt(position)
+        openedSwipe = null
+        adapter.notifyItemRemoved(position)
+        if (contacts.isEmpty() && !isLoading) {
+            emptyView.visibility = View.VISIBLE
+            recyclerView.visibility = View.GONE
+        }
+        Toast.makeText(this, R.string.contacts_delete_success, Toast.LENGTH_SHORT).show()
     }
 
     private fun loadNextPage() {
@@ -93,7 +132,19 @@ class ContactsActivity : CallAwareActivity() {
                     isLoading = false
                     loadingContainer.visibility = View.GONE
                     val list = value?.contacts.orEmpty()
-                    contacts.addAll(list)
+                    list.forEach {
+                        val alreadyLocal = LocalContactStore.contains(
+                            this@ContactsActivity, it.userId.orEmpty()
+                        )
+                        if (alreadyLocal) return@forEach
+                        contacts.add(
+                            ContactEntry(
+                                it,
+                                LocalContactStore.TYPE_VOIP,
+                                isLocal = false
+                            )
+                        )
+                    }
                     nextCursor = value?.nextCursor.orEmpty()
                     hasMore = nextCursor.isNotEmpty() && list.isNotEmpty()
 
@@ -154,8 +205,15 @@ class ContactsActivity : CallAwareActivity() {
             dialog.dismiss()
         }
         dialog.setContentView(view)
+        (view.parent as? View)?.setBackgroundColor(android.graphics.Color.TRANSPARENT)
         dialog.show()
     }
+
+    private data class ContactEntry(
+        val contact: TXIoTCallSession.Contact,
+        val type: Int,
+        val isLocal: Boolean
+    )
 
     private fun startCall(contact: TXIoTCallSession.Contact, isVideo: Boolean) {
         val peerId = contact.userId.orEmpty()
@@ -191,11 +249,34 @@ class ContactsActivity : CallAwareActivity() {
                 FooterHolder(inflater.inflate(R.layout.item_contact_footer, parent, false))
             } else {
                 val holder = ContactHolder(inflater.inflate(R.layout.item_contact, parent, false))
-                holder.itemView.setOnClickListener {
+                holder.swipe.listener = object : SwipeRevealLayout.OnSwipeStateChangedListener {
+                    override fun onOpened(view: SwipeRevealLayout) {
+                        if (openedSwipe != null && openedSwipe !== view) {
+                            openedSwipe?.close()
+                        }
+                        openedSwipe = view
+                    }
+                }
+                holder.content.setOnClickListener {
+                    if (openedSwipe != null) {
+                        openedSwipe?.close()
+                        openedSwipe = null
+                        return@setOnClickListener
+                    }
+                    if (holder.swipe.isOpen) {
+                        holder.swipe.close()
+                        return@setOnClickListener
+                    }
                     val pos = holder.adapterPosition
                     if (pos == RecyclerView.NO_POSITION) return@setOnClickListener
-                    val contact = contacts.getOrNull(pos) ?: return@setOnClickListener
-                    showCallMediaSheet(contact)
+                    val entry = contacts.getOrNull(pos) ?: return@setOnClickListener
+                    showCallMediaSheet(entry.contact)
+                }
+                holder.delete.setOnClickListener {
+                    val pos = holder.adapterPosition
+                    if (pos == RecyclerView.NO_POSITION) return@setOnClickListener
+                    val entry = contacts.getOrNull(pos) ?: return@setOnClickListener
+                    onDeleteLocalContact(pos, entry)
                 }
                 holder
             }
@@ -204,11 +285,15 @@ class ContactsActivity : CallAwareActivity() {
         override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
             when (holder) {
                 is ContactHolder -> {
-                    val item = contacts[position]
+                    val entry = contacts[position]
+                    val item = entry.contact
                     val displayName = item.userName?.takeIf { it.isNotEmpty() }
-                        ?: item.userId.orEmpty()
+                        ?: "null"
                     holder.name.text = displayName
                     holder.id.text = item.userId.orEmpty()
+                    bindTypeTag(holder.tag, entry.type)
+                    holder.swipe.close(animate = false)
+                    holder.swipe.isSwipeEnabled = entry.isLocal
                 }
                 is FooterHolder -> {
                     if (footerLoading) {
@@ -223,9 +308,39 @@ class ContactsActivity : CallAwareActivity() {
         }
     }
 
+    private fun bindTypeTag(tag: TextView, type: Int) {
+        when (type) {
+            LocalContactStore.TYPE_VOIP -> {
+                tag.visibility = View.VISIBLE
+                tag.setText(R.string.contacts_tag_voip)
+                tag.setBackgroundResource(R.drawable.bg_contact_tag_voip)
+                tag.setTextColor(getColor(R.color.contact_tag_voip_text))
+            }
+            LocalContactStore.TYPE_IOT -> {
+                tag.visibility = View.VISIBLE
+                tag.setText(R.string.contacts_tag_iot)
+                tag.setBackgroundResource(R.drawable.bg_contact_tag_iot)
+                tag.setTextColor(getColor(R.color.contact_tag_iot_text))
+            }
+            else -> {
+                tag.visibility = View.GONE
+            }
+        }
+    }
+
+    companion object {
+        private const val PAGE_SIZE = 20
+        private const val VIEW_TYPE_CONTACT = 0
+        private const val VIEW_TYPE_FOOTER = 1
+    }
+
     private class ContactHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val swipe: SwipeRevealLayout = view as SwipeRevealLayout
+        val content: View = view.findViewById(R.id.ll_contact_content)
+        val delete: View = view.findViewById(R.id.tv_contact_delete)
         val name: TextView = view.findViewById(R.id.tv_contact_name)
         val id: TextView = view.findViewById(R.id.tv_contact_id)
+        val tag: TextView = view.findViewById(R.id.tv_contact_tag)
     }
 
     private class FooterHolder(view: View) : RecyclerView.ViewHolder(view) {

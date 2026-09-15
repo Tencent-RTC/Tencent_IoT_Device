@@ -4,7 +4,7 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24"
-    android:tint="@color/call_media_audio_tint">
+    android:tint="@android:color/white">
     <!-- 经典听筒 -->
     <path
         android:fillColor="@android:color/white"

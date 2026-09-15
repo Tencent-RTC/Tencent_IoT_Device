@@ -16,9 +16,24 @@
     <string name="login_button">登录</string>
     <string name="login_help">如何获取接入信息？</string>
 
+    <!-- 日志页 -->
+    <string name="log_page_title">日志</string>
+    <string name="log_page_subtitle">设备与日志信息</string>
+    <string name="log_page_device_info">设备硬件信息</string>
+    <string name="log_page_log_files">日志文件</string>
+    <string name="log_page_log_files_desc">当前日志文件数：%1$d，总大小：%2$s</string>
+    <string name="log_page_log_files_empty_desc">当前无日志文件</string>
+    <string name="log_page_share">打包并分享日志</string>
+    <string name="log_page_sharing">正在打包…</string>
+    <string name="log_page_share_failed">打包失败：%1$s</string>
+    <string name="log_page_no_log">暂无日志文件</string>
+    <string name="log_page_share_title">分享日志</string>
+    <string name="log_page_hero_subtitle">Android 设备</string>
+
     <!-- Home page -->
     <string name="home_welcome_title">欢迎回来！</string>
     <string name="home_welcome_subtitle">智能设备平台</string>
+    <string name="home_bind_tip">若应用端需要绑定设备，可在设备详情页获取绑定二维码</string>
 
     <string name="home_card_thing_model_title">物模型</string>
     <string name="home_card_thing_model_desc">设备物模型管理与配置，\n定义设备能力与属性</string>
@@ -46,21 +61,37 @@
     <string name="contacts_load_error">加载失败：%1$s</string>
     <string name="contacts_load_more">加载更多</string>
     <string name="contacts_no_more">— 已加载全部 —</string>
+    <string name="contacts_call_tip">呼叫小程序前，请先在设备详情页选择需要呼叫的小程序版本</string>
+    <string name="contacts_add">添加联系人</string>
+    <string name="contacts_tag_voip">VOIP用户</string>
+    <string name="contacts_tag_iot">P2P设备</string>
+    <string name="contacts_delete">删除</string>
+    <string name="contacts_delete_success">已删除</string>
+
+    <!-- 添加联系人弹窗 -->
+    <string name="add_contact_title">添加联系人</string>
+    <string name="add_contact_subtitle">支持添加 VoIP 用户和物联网设备</string>
+    <string name="add_contact_type_voip">VOIP用户</string>
+    <string name="add_contact_type_iot">P2P设备</string>
+    <string name="add_contact_voip_hint">格式：modelId/appId/openId</string>
+    <string name="add_contact_iot_hint">格式：productId/deviceName</string>
+    <string name="add_contact_voip_desc">VOIP 用户的 UserId 格式为 modelId/appId/openId</string>
+    <string name="add_contact_iot_desc">P2P 设备的 UserId 格式为 productId/deviceName</string>
+    <string name="add_contact_name_label">备注名（可选）</string>
+    <string name="add_contact_name_hint">请输入备注名</string>
+    <string name="add_contact_userid_label">UserId</string>
+    <string name="add_contact_cancel">取消</string>
+    <string name="add_contact_confirm">添加</string>
+    <string name="add_contact_empty_userid">请输入 UserId</string>
+    <string name="add_contact_invalid_voip">VoIP 用户格式应为 modelId/appId/openId</string>
+    <string name="add_contact_invalid_iot">物联网设备格式应为 productId/deviceName</string>
+    <string name="add_contact_duplicated">该联系人已存在</string>
+    <string name="add_contact_success">添加成功</string>
 
     <!-- 通话方式底部弹窗 -->
-    <string name="call_media_sheet_title">发起通话</string>
-    <string name="call_media_sheet_subtitle">请选择通话方式</string>
     <string name="call_media_video">视频通话</string>
-    <string name="call_media_video_desc">与对方实时视频面对面</string>
     <string name="call_media_audio">语音通话</string>
-    <string name="call_media_audio_desc">仅使用麦克风进行语音通话</string>
     <string name="call_media_sheet_cancel">取消</string>
-
-    <string name="home_card_monitor_title">监控</string>
-    <string name="home_card_monitor_desc">设备监控与画面查看，\n实时掌控设备状态</string>
-
-    <string name="home_tab_home">首页</string>
-    <string name="home_tab_mine">我的</string>
 
     <string name="home_mine_placeholder">个人中心</string>
 
@@ -92,6 +123,37 @@
     <string name="detail_section_monitor">监控设置</string>
     <string name="detail_monitor_auto_launch_title">有人查看监控时跳转本地预览</string>
     <string name="detail_monitor_auto_launch_desc">关闭后，云端拉流时将保持在首页后台推流，不再打开预览页面</string>
+
+    <!-- 设备详情 - TweCall 设置 -->
+    <string name="detail_section_twecall">视频通话 TweCall 设置</string>
+    <string name="detail_twecall_flavor_title">小程序版本</string>
+    <string name="detail_twecall_flavor_desc">拨打微信小程序端时使用的版本</string>
+    <string name="detail_twecall_flavor_release">正式版</string>
+    <string name="detail_twecall_flavor_trial">体验版</string>
+    <string name="detail_twecall_flavor_debug">开发版</string>
+    <string name="detail_twecall_flavor_release_desc">稳定版本，适合正式环境</string>
+    <string name="detail_twecall_flavor_trial_desc">体验版，适合预发布验证</string>
+    <string name="detail_twecall_flavor_debug_desc">开发版，适合开发调试</string>
+    <string name="detail_twecall_flavor_restart_tip">版本已切换，重启 App 后生效</string>
+    <string name="detail_twecall_flavor_current">当前</string>
+
+    <!-- 设备详情 - 设备绑定二维码 -->
+    <string name="detail_section_signature">绑定设备二维码</string>
+    <string name="detail_signature_desc">填入云 API 密钥，生成当前设备用于 APP 绑定的二维码。SecretKey 具有账号操作权限，请妥善保管，切勿泄露。</string>
+    <string name="detail_signature_desc_valid">二维码 5 分钟内有效，过期请重新获取。</string>
+    <string name="detail_signature_console_link">前往腾讯云控制台获取 SecretId / SecretKey</string>
+    <string name="detail_signature_console_url" translatable="false">https://console.cloud.tencent.com/cam/capi</string>
+    <string name="detail_signature_secret_id_hint">SecretId</string>
+    <string name="detail_signature_secret_key_hint">SecretKey</string>
+    <string name="detail_signature_get">获取二维码</string>
+    <string name="detail_signature_getting">获取中…</string>
+    <string name="detail_signature_result_title">设备绑定二维码</string>
+    <string name="detail_signature_qr_refresh_hint">点击二维码可刷新</string>
+    <string name="detail_signature_empty_secret_id">请输入 SecretId</string>
+    <string name="detail_signature_empty_secret_key">请输入 SecretKey</string>
+    <string name="detail_signature_no_device">当前无有效设备信息</string>
+    <string name="detail_signature_failed">获取失败：%1$s</string>
+
 
     <!-- 监控/拨打接听 选择弹窗 -->
     <string name="monitor_sheet_title">监控与通话</string>

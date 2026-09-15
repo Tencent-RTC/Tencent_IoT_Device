@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import com.tencent.liteav.iot.TXIoTDeviceEngine
 import com.tencent.liteav.iot.TXIoTError
 import com.tencent.liteav.iot.TXIoTMonitorSession
+import com.tencent.liteav.iot.demo.util.AppPreferences
 
 class HomeActivity : CallAwareActivity() {
 
@@ -46,7 +47,7 @@ class HomeActivity : CallAwareActivity() {
             option: TXIoTMonitorSession.Option?,
             customData: String?
         ) {
-            if (MonitorPreferences.autoLaunchPreview) {
+            if (AppPreferences.autoLaunchPreview) {
                 launchMonitorActivity(option, customData)
             } else {
                 startHeadlessMonitor(option)
@@ -176,6 +177,17 @@ class HomeActivity : CallAwareActivity() {
                 putExtra(DeviceDetailActivity.EXTRA_REGION, region)
             }
             startActivity(intent)
+        }
+        findViewById<TextView>(R.id.tv_home_bind_tip_text).text = getText(R.string.home_bind_tip)
+        val bindTip = findViewById<View>(R.id.tv_home_bind_tip)
+        if (AppPreferences.homeBindTipDismissed) {
+            bindTip.visibility = View.GONE
+        } else {
+            bindTip.visibility = View.VISIBLE
+            findViewById<View>(R.id.iv_home_bind_tip_close).setOnClickListener {
+                bindTip.visibility = View.GONE
+                AppPreferences.homeBindTipDismissed = true
+            }
         }
     }
 

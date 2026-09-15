@@ -17,9 +17,6 @@
         android:name="android.hardware.microphone"
         android:required="false" />
 
-
-
-
     <application
         android:name=".DemoApplication"
         android:allowBackup="true"
@@ -77,6 +74,21 @@
             android:exported="false"
             android:label="@string/detail_title"
             android:theme="@style/Theme.TXIoTDeviceDemo" />
+        <activity
+            android:name=".DeviceLogActivity"
+            android:exported="false"
+            android:label="@string/log_page_title"
+            android:theme="@style/Theme.TXIoTDeviceDemo" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

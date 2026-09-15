@@ -34,6 +34,19 @@
             android:textColor="@color/contacts_title"
             android:textSize="17sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_contacts_add"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_contacts_add"
+            android:clickable="true"
+            android:contentDescription="@string/contacts_add"
+            android:focusable="true"
+            android:padding="7dp"
+            android:src="@drawable/ic_thing_plus" />
     </FrameLayout>
 
     <TextView
@@ -49,6 +62,45 @@
         app:layout_constraintTop_toBottomOf="@id/fl_contacts_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 呼叫前提示 -->
+    <LinearLayout
+        android:id="@+id/tv_contacts_tip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_contacts_tip"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="10dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="6dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_contacts_subtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_home_tip_info" />
+
+        <TextView
+            android:id="@+id/tv_contacts_tip_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:letterSpacing="0.01"
+            android:lineSpacingExtra="2dp"
+            android:text="@string/contacts_call_tip"
+            android:textColor="@color/contacts_tip_text"
+            android:textSize="12sp" />
+
+    </LinearLayout>
 
     <!-- 联系人列表 -->
     <androidx.recyclerview.widget.RecyclerView
@@ -67,7 +119,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_contacts_subtitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_contacts_tip"
         tools:itemCount="2"
         tools:listitem="@layout/item_contact" />
 
@@ -79,7 +131,7 @@
         android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/tv_contacts_subtitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_contacts_tip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
@@ -108,7 +160,7 @@
         android:textColor="@color/contacts_empty_text"
         android:textSize="14sp"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/tv_contacts_subtitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_contacts_tip"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />

@@ -224,12 +224,204 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- 退出按钮 -->
+            <!-- TweCall 设置卡片 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_detail_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_section_twecall"
+                    android:textColor="@color/home_subtitle"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_twecall_flavor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/detail_twecall_flavor_title"
+                            android:textColor="@color/home_title"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/detail_twecall_flavor_desc"
+                            android:textColor="@color/home_card_desc"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_twecall_flavor_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/detail_twecall_flavor_release"
+                            android:textColor="@color/login_primary"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="4dp"
+                            android:contentDescription="@null"
+                            android:src="@drawable/ic_arrow_drop_down" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 设备绑定签名卡片 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_detail_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_section_signature"
+                    android:textColor="@color/home_subtitle"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tv_signature_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/detail_signature_desc"
+                    android:textColor="@color/home_card_desc"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/tv_signature_console_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:paddingVertical="2dp"
+                    android:text="@string/detail_signature_console_link"
+                    android:textColor="@color/link_blue"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/et_secret_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_login_input"
+                    android:hint="@string/detail_signature_secret_id_hint"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="@color/home_title"
+                    android:textColorHint="@color/home_card_desc"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_secret_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_login_input"
+                    android:hint="@string/detail_signature_secret_key_hint"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="@color/home_title"
+                    android:textColorHint="@color/home_card_desc"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_get_signature"
+                    android:layout_width="match_parent"
+                    android:layout_height="46dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_detail_logout"
+                    android:stateListAnimator="@null"
+                    android:text="@string/detail_signature_get"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll_signature_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/thing_divider" />
+
+                    <ImageView
+                        android:id="@+id/iv_signature_qr"
+                        android:layout_width="220dp"
+                        android:layout_height="220dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:contentDescription="@string/detail_signature_result_title"
+                        android:focusable="true"
+                        android:padding="4dp"
+                        android:scaleType="fitCenter" />
+
+                    <TextView
+                        android:id="@+id/tv_signature_qr_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/detail_signature_qr_refresh_hint"
+                        android:textColor="@color/home_card_desc"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
             <Button
                 android:id="@+id/btn_logout"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:background="@drawable/bg_detail_logout"
                 android:letterSpacing="0.05"
                 android:stateListAnimator="@null"

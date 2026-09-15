@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.tencent.liteav.iot.demo"
-        minSdk = 21
+        minSdk = 23
         targetSdk = 29
         versionCode = 1
         versionName = "1.0"
@@ -53,6 +53,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.recyclerview)
+    implementation("androidx.security:security-crypto:1.0.0")
+    implementation("com.google.zxing:core:3.5.3")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -18,6 +18,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.tencent.liteav.iot.TXIoTCallback
 import com.tencent.liteav.iot.TXIoTDeviceEngine
+import com.tencent.liteav.iot.demo.util.AppPreferences
+import com.tencent.liteav.iot.demo.util.IoTSessionStore
+import com.tencent.liteav.iot.TXIoTError
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,15 +31,22 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var flRegion: FrameLayout
     private lateinit var tvRegion: TextView
     private lateinit var btnLogin: Button
+    private lateinit var ivLogo: ImageView
 
     private val regionOptions = listOf(
-        "中国-广州 (ap-guangzhou)"
+        "中国 (china)",
+        "美国东部 (us-east)",
+        "欧洲 (europe)",
+        "亚太-曼谷 (ap-bangkok)"
     )
 
     private var selectedRegionIndex: Int = -1
     private var regionPopup: PopupWindow? = null
 
     private var secretVisible = false
+
+    private var logoClickCount = 0
+    private var logoLastClickTime = 0L
 
     private val engine: TXIoTDeviceEngine by lazy {
         TXIoTDeviceEngine.getInstance(applicationContext)
@@ -48,6 +58,8 @@ class LoginActivity : AppCompatActivity() {
 
         bindViews()
         setupInteractions()
+        applyRegionSelection(AppPreferences.region)
+        autoLoginIfNeeded()
     }
 
     private fun bindViews() {
@@ -58,9 +70,23 @@ class LoginActivity : AppCompatActivity() {
         flRegion = findViewById(R.id.fl_region)
         tvRegion = findViewById(R.id.tv_region)
         btnLogin = findViewById(R.id.btn_login)
+        ivLogo = findViewById(R.id.iv_login_logo)
     }
 
     private fun setupInteractions() {
+        ivLogo.setOnClickListener {
+            val now = System.currentTimeMillis()
+            if (now - logoLastClickTime > 1500L) {
+                logoClickCount = 0
+            }
+            logoLastClickTime = now
+            logoClickCount++
+            if (logoClickCount >= 3) {
+                logoClickCount = 0
+                startActivity(Intent(this, DeviceLogActivity::class.java))
+            }
+        }
+
         ivSecretToggle.setOnClickListener {
             secretVisible = !secretVisible
             if (secretVisible) {
@@ -94,17 +120,47 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun applyRegionSelection(region: String) {
+        val publicRegion = DemoApplication.publicRegion(region)
+        val index = regionOptions.indexOfFirst { parseRegion(it) == publicRegion }
+        selectedRegionIndex = if (index >= 0) index else 0
+        tvRegion.text = regionOptions[selectedRegionIndex]
+        tvRegion.setTextColor(
+            ContextCompat.getColor(this, R.color.login_input_text)
+        )
+    }
+
+    private fun autoLoginIfNeeded() {
+        if (!AppPreferences.isLoggedIn) return
+        etProductId.setText(AppPreferences.productId)
+        etDeviceId.setText(AppPreferences.deviceId)
+        etDeviceSecret.setText(AppPreferences.deviceSecret)
+        val region = DemoApplication.publicRegion(AppPreferences.region)
+        doLogin(
+            AppPreferences.productId,
+            AppPreferences.deviceId,
+            AppPreferences.deviceSecret,
+            region
+        )
+    }
+
     private fun doLogin(
         productId: String,
         deviceId: String,
         deviceSecret: String,
         region: String
     ) {
+        val app = application as DemoApplication
+        val initCode = app.ensureRegion(region)
+        if (initCode != TXIoTError.SUCCESS && initCode != TXIoTError.ALREADY_INITIALIZED) {
+            toast("初始化失败：$initCode")
+            return
+        }
+
         val deviceInfo = TXIoTDeviceEngine.DeviceInfo().apply {
             this.productId = productId
             this.deviceId = deviceId
             this.deviceSecret = deviceSecret
-            this.region = region
         }
 
         btnLogin.isEnabled = false
@@ -115,6 +171,7 @@ class LoginActivity : AppCompatActivity() {
                 if (isFinishing || isDestroyed) return
                 btnLogin.isEnabled = true
                 IoTSessionStore.update(productId, deviceId, region)
+                AppPreferences.saveLogin(productId, deviceId, deviceSecret, region)
                 toast("登录成功")
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java).apply {
                     putExtra(HomeActivity.EXTRA_PRODUCT_ID, productId)

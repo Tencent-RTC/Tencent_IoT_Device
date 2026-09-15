@@ -23,6 +23,7 @@ import com.tencent.liteav.iot.TXIoTDataModelSession.ResultItem
 import com.tencent.liteav.iot.TXIoTCallback
 import com.tencent.liteav.iot.TXIoTDeviceEngine
 import com.tencent.liteav.iot.TXIoTValueCallback
+import com.tencent.liteav.iot.demo.util.IoTSessionStore
 
 class DataModelActivity : CallAwareActivity() {
 

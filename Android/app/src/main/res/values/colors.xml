@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="link_blue">#4B7BF5</color>
 
     <!-- Login page colors -->
     <color name="login_bg_start">#EEF1FB</color>
@@ -161,17 +162,29 @@
     <color name="contacts_item_name">#1D2129</color>
     <color name="contacts_item_id">#86909C</color>
     <color name="contacts_avatar_bg">#E4F5EA</color>
-    <color name="contacts_avatar_text">#33B26B</color>
+    <color name="contacts_avatar_text">#86909C</color>
     <color name="contacts_divider">#F2F3F5</color>
     <color name="contacts_empty_text">#86909C</color>
     <color name="contacts_load_more_bg">#EEF1FB</color>
     <color name="contacts_load_more_text">#4B7BF5</color>
-
-    <color name="call_media_video_bg">#E4F5EA</color>
-    <color name="call_media_video_tint">#33B26B</color>
-    <color name="call_media_audio_bg">#EEF1FB</color>
-    <color name="call_media_audio_tint">#4B7BF5</color>
-    <color name="call_media_title">#1D2129</color>
-    <color name="call_media_desc">#86909C</color>
     <color name="call_media_cancel_text">#4E5969</color>
+    <color name="home_tip_bg">#F5F8FF</color>
+    <color name="home_tip_stroke">#E1E9FB</color>
+    <color name="home_tip_text">#4E5969</color>
+    <color name="home_tip_accent">#4B7BF5</color>
+    <color name="home_tip_close">#86909C</color>
+    <color name="contacts_tip_bg">#F5F8FF</color>
+    <color name="contacts_tip_stroke">#E1E9FB</color>
+    <color name="contacts_tip_text">#4E5969</color>
+    <color name="contacts_tip_accent">#4B7BF5</color>
+    <color name="contacts_tip_close">#86909C</color>
+
+    <!-- 联系人类型标签颜色 -->
+    <color name="contact_tag_voip_bg">#E9EEFC</color>
+    <color name="contact_tag_voip_text">#4B7BF5</color>
+    <color name="contact_tag_iot_bg">#E4F5EA</color>
+    <color name="contact_tag_iot_text">#33B26B</color>
+
+    <!-- 侧滑删除按钮 -->
+    <color name="contact_swipe_delete_bg">#F26C6C</color>
 </resources>

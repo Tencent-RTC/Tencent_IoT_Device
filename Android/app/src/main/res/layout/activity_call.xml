@@ -193,7 +193,8 @@
             android:layout_height="wrap_content"
             android:text="@string/call_state_talking"
             android:textColor="#CCFFFFFF"
-            android:textSize="15sp"
+            android:textSize="26sp"
+            android:textStyle="bold"
             android:visibility="gone" />
 
         <TextView
@@ -203,8 +204,7 @@
             android:layout_marginTop="6dp"
             android:text="@string/call_duration_zero"
             android:textColor="#FFFFFF"
-            android:textSize="26sp"
-            android:textStyle="bold"
+            android:textSize="15sp"
             android:visibility="gone" />
 
         <LinearLayout

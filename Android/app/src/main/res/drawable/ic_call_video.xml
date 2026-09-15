@@ -4,7 +4,7 @@
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24"
-    android:tint="@color/call_media_video_tint">
+    android:tint="@android:color/white">
     <!-- 摄像机机身 -->
     <path
         android:fillColor="@android:color/white"
